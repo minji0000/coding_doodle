@@ -42,7 +42,7 @@ public class IfNotAnAthlete {
                 isDancer = false;
                 isAthlete = false;
                 isAmerican = false;
-                isKrExperienced = false;
+                isKrExperienced = false; 
                 
             //5. 한국 생활 경험이 있는 미국인이다.
             }else if(i==5) {
