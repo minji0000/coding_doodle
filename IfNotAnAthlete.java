@@ -53,6 +53,14 @@ public class IfNotAnAthlete {
                 isKrExperienced = true;
             }
 
+            /** 검증 */
+            //A가 운동선수가 아니라면 무용수이다.
+            boolean p1 = (!isAthlete || isDancer);
+
+            //그런데 모든 무용수는 흰색 재킷을 입는다.
+            boolean p2 = (isDancer && wearsWhiteJacket);
+
+
         }
 
     }
