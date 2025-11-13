@@ -53,15 +53,32 @@ public class IfNotAnAthlete {
                 isKrExperienced = true;
             }
 
-            /** 검증 */
+            /** 전체 조건 검증 
+             * 7가지 전제 조건 모두를 동시에 만족시켜 논리적 모순을 일으키지 않는 유일한 가정 찾기
+            */
+            
             //A가 운동선수가 아니라면 무용수이다.
             boolean p1 = (!isAthlete || isDancer);
 
             //그런데 모든 무용수는 흰색 재킷을 입는다.
-            boolean p2 = (isDancer && wearsWhiteJacket);
+            boolean p2 = (!isDancer || wearsWhiteJacket);
 
+            //만일 A가 운동선수라면, 그는 미국인이거나 독일인이다.
+            boolean p3 = (!isAthlete || (isAmerican || isGerman));
 
+            //그런데 어떤 독일인도 한국 생활 경험이 없다면 김치를 먹을 줄 모른다.
+            boolean p4 = (!(isGerman && !isKrExperienced) || !knowsKimchi);
+
+            //그리고 한국 생활을 경험한 운동선수들은 모두 흰 색 재킷을 입는다.
+            boolean p5 = (!(isKrExperienced && isAthlete) || wearsWhiteJacket);
+
+            boolean trueYn = p1&&p2&&p3&&p4&&p5;
+
+            if(trueYn) {
+                System.out.print("정답은" + i + "번!");
+                break;
+            }
+            
         }
-
     }
 }
