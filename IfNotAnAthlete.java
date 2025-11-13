@@ -58,7 +58,10 @@ public class IfNotAnAthlete {
             */
             
             //A가 운동선수가 아니라면 무용수이다.
-            boolean p1 = (!isAthlete || isDancer);
+            //p1
+            if(!isAthlete) {
+                isDancer = true;
+            }
 
             //그런데 모든 무용수는 흰색 재킷을 입는다.
             boolean p2 = (!isDancer || wearsWhiteJacket);
@@ -72,7 +75,7 @@ public class IfNotAnAthlete {
             //그리고 한국 생활을 경험한 운동선수들은 모두 흰 색 재킷을 입는다.
             boolean p5 = (!(isKrExperienced && isAthlete) || wearsWhiteJacket);
 
-            boolean trueYn = p1&&p2&&p3&&p4&&p5;
+            boolean trueYn = p2&&p3&&p4&&p5;
 
             if(trueYn) {
                 System.out.print("정답은" + i + "번!");
