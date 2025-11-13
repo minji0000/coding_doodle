@@ -1,5 +1,8 @@
+/*
+ * 2025.11.13
+ * 문해력 테스트
+ */
 public class IfNotAnAthlete {
-    
     public static void main(String[] args) {
 
         for(int i=1; i<=5; i++) {
@@ -55,7 +58,7 @@ public class IfNotAnAthlete {
 
             /** 전체 조건 검증 
              * 7가지 전제 조건 모두를 동시에 만족시켜 논리적 모순을 일으키지 않는 유일한 가정 찾기
-            */
+            */ 
             
             //A가 운동선수가 아니라면 무용수이다.
             //p1
